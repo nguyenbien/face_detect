@@ -131,7 +131,12 @@ public class AndroidFaceDetectView implements PlatformView, MethodCallHandler, O
                 result.success(String.valueOf(viewId));
                 break;
             case "startCamera":
-                startEkycModule(detectionParams);
+                new MainThreadExecutor().execute(new Runnable() {
+                    @Override
+                    public void run() {
+                        startEkycModule(detectionParams);
+                    }
+                });
                 break;
             case "stopCamera":
                 //ekycManager.stopDetection();
