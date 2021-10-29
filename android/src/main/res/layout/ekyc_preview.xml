@@ -10,7 +10,7 @@
     android:background="#000"
     android:keepScreenOn="true">
 
-    <com.lib.ekyc.core.ekyc.CameraSourcePreview
+    <com.msb.msb_ekyc_face_detect_camera.core.ekyc.CameraSourcePreview
         android:id="@+id/firePreview"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -19,7 +19,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <com.lib.ekyc.core.ekyc.GraphicOverlay
+        <com.msb.msb_ekyc_face_detect_camera.core.ekyc.GraphicOverlay
             android:id="@+id/fireFaceOverlay"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -27,6 +27,6 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentBottom="true"
             android:foregroundGravity="fill" />
-    </com.lib.ekyc.core.ekyc.CameraSourcePreview>
+    </com.msb.msb_ekyc_face_detect_camera.core.ekyc.CameraSourcePreview>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

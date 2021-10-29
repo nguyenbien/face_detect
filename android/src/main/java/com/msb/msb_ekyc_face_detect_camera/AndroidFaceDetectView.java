@@ -28,14 +28,14 @@ import com.karumi.dexter.listener.multi.MultiplePermissionsListener;
 import com.karumi.dexter.listener.single.PermissionListener;
 
 import com.google.gson.Gson;
-import com.lib.ekyc.core.ekyc.CameraSourcePreview;
-import com.lib.ekyc.core.ekyc.EKYCManager;
-import com.lib.ekyc.core.ekyc.GraphicOverlay;
-import com.lib.ekyc.core.record.EKYCLogger;
-import com.lib.ekyc.entity.DetectionParams;
-import com.lib.ekyc.entity.Gesture;
-import com.lib.ekyc.events.OnEKYCEvernts;
-import com.lib.ekyc.misc.DetectionEvent;
+import com.msb.msb_ekyc_face_detect_camera.core.ekyc.CameraSourcePreview;
+import com.msb.msb_ekyc_face_detect_camera.core.ekyc.EKYCManager;
+import com.msb.msb_ekyc_face_detect_camera.core.ekyc.GraphicOverlay;
+import com.msb.msb_ekyc_face_detect_camera.core.record.EKYCLogger;
+import com.msb.msb_ekyc_face_detect_camera.entity.DetectionParams;
+import com.msb.msb_ekyc_face_detect_camera.entity.Gesture;
+import com.msb.msb_ekyc_face_detect_camera.events.OnEKYCEvernts;
+import com.msb.msb_ekyc_face_detect_camera.misc.DetectionEvent;
 
 import io.flutter.plugin.common.PluginRegistry.Registrar;
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
