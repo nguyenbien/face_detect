@@ -110,38 +110,28 @@ public class AndroidFaceDetectView implements PlatformView, MethodCallHandler, O
         Log.i(TAG, "onMethodCall " + call.method);
         switch (call.method) {
             case "initCamera":
-                activity.runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        List<Map<String, Object>> gestureListJson = call.argument("expectedGestures");
-                        listExpectedGesture.clear();
-                        long time = 30 * 1000;
-                        if (gestureListJson != null) {
-                            for (int i = 0; i < gestureListJson.size(); i++) {
-                                Map<String, Object> gesture = gestureListJson.get(i);
-                                //do something with i
-                                if (gesture != null) {
-                                    Log.i(TAG, gesture.toString());
-                                    String gestureName = gesture.get("name").toString();
-                                    if (!gestureName.isEmpty()) {
-                                        listExpectedGesture.add(new Gesture(gestureName, time, 0, 0));
-                                    }
-                                }
+                List<Map<String, Object>> gestureListJson = call.argument("expectedGestures");
+                listExpectedGesture.clear();
+                long time = 30 * 1000;
+                if (gestureListJson != null) {
+                    for (int i = 0; i < gestureListJson.size(); i++) {
+                        Map<String, Object> gesture = gestureListJson.get(i);
+                        //do something with i
+                        if (gesture != null) {
+                            Log.i(TAG, gesture.toString());
+                            String gestureName = gesture.get("name").toString();
+                            if (!gestureName.isEmpty()) {
+                                listExpectedGesture.add(new Gesture(gestureName, time, 0, 0));
                             }
                         }
-                        initGestures();
-                        init();
-                        result.success(String.valueOf(viewId));
                     }
-                });
+                }
+                initGestures();
+                init();
+                result.success(String.valueOf(viewId));
                 break;
             case "startCamera":
-                activity.runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        startEkycModule(detectionParams);
-                    }
-                });
+                startEkycModule(detectionParams);
                 break;
             case "stopCamera":
                 //ekycManager.stopDetection();
