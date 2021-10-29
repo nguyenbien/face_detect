@@ -131,7 +131,7 @@ public class AndroidFaceDetectView implements PlatformView, MethodCallHandler, O
                 result.success(String.valueOf(viewId));
                 break;
             case "startCamera":
-                new MainThreadExecutor().execute(new Runnable() {
+                activity.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
                         startEkycModule(detectionParams);
