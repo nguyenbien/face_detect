@@ -99,9 +99,8 @@ public class CameraSource {
    }
 
    @RequiresPermission("android.permission.CAMERA")
-   public synchronized CameraSource start(SurfaceHolder surfaceHolder) throws IOException {
+   public synchronized void start(SurfaceHolder surfaceHolder) throws IOException {
       if (this.camera != null) {
-         return this;
       } else {
          this.camera = this.createCamera();
          this.camera.setPreviewDisplay(surfaceHolder);
@@ -113,7 +112,6 @@ public class CameraSource {
          this.processingRunnable.setActive(true);
          this.processingThread.start();
          this.usingSurfaceTexture = false;
-         return this;
       }
    }
 
